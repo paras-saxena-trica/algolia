@@ -12,7 +12,16 @@ exports.handler = async (event) => {
     const algoliaSettings = {
         appId: process.env.ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_API_KEY,
-        index: process.env.ALGOLIA_INDEX
+        index: process.env.ALGOLIA_INDEX,
+         indexSettings:{
+            searchableAttributes: [
+             'title',
+             'html'
+            ],
+            attributesForFaceting: [
+             'filterOnly(tags.name)'
+           ]
+        }
     };
 
     let {post} = JSON.parse(event.body);
