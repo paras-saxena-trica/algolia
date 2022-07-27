@@ -19,7 +19,8 @@ exports.handler = async (event) => {
              'html'
             ],
             attributesForFaceting: [
-             'filterOnly(tags.name)'
+             'filterOnly(tags.name)',
+                'filterOnly(slug)'                
            ]
         }
     };
